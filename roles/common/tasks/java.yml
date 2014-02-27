@@ -1,0 +1,2 @@
+- name: Install java
+  apt: pkg=openjdk-7-jdk state=installed update_cache=yes

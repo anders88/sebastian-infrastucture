@@ -1,0 +1,5 @@
+- hosts: 
+    - sebastian
+  tasks:
+    - include: roles/common/tasks/java.yml
+  user: root
