@@ -2,4 +2,7 @@
     - sebastian
   tasks:
     - include: roles/common/tasks/java.yml
+    - include: roles/common/tasks/nginx.yml
   user: root
+  handlers:
+    - include: handlers.yml

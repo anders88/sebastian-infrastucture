@@ -1,0 +1,10 @@
+- name: ensure installed nginx
+  apt: pkg=nginx state=installed update_cache=yes
+- name: Start nginx
+  service: name=nginx state=started
+- name: nginx config
+  copy: src=nginx/sites-available/default dest=/etc/nginx/sites-available/default owner=root
+  notify:
+    - reload nginx
+- name: Symlink default into sites-enabled
+  action: file src=/etc/nginx/sites-available/default dest=/etc/nginx/sites-enabled/default owner=root group=root state=link
